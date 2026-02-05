@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VALORANT Rank Promotion</title>
+
+<style>
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at center, #0f1923 0%, #000 100%);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    color: white;
+}
+
+/* VALORANT Logo */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 130px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 1s;
+}
+
+/* Center promotion text */
+.promotion {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    animation: promote 4s forwards;
+}
+
+.promotion h1 {
+    font-size: 28px;
+    color: #aaa;
+    letter-spacing: 3px;
+}
+
+.rank {
+    font-size: 90px;
+    color: silver;
+    text-shadow: 0 0 40px white;
+    margin-top: 10px;
+}
+
+/* Playercard */
+.card-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    animation: revealCard 1.5s forwards;
+    animation-delay: 4s;
+}
+
+.playercard {
+    width: 350px;
+    border: 3px solid #ff4655;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(255,70,85,0.8);
+}
+
+/* Plastic badge */
+.badge {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 100px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes promote {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    30% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.3);
+    }
+
+}
+
+@keyframes revealCard {
+
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.2);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+}
+
+@keyframes glow {
+
+    from {
+        filter: drop-shadow(0 0 5px white);
+    }
+
+    to {
+        filter: drop-shadow(0 0 25px white);
+    }
+
+}
+
+@keyframes fadeIn {
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<img class="logo"
+src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Valorant_logo_-_pink_color_version.svg">
+
+<div class="promotion">
+
+<h1>YOU ARE PROMOTED</h1>
+
+<div class="rank">
+PLASTIC
+</div>
+
+</div>
+
+
+<div class="card-container">
+
+<img class="playercard" src="playercard.jpg">
+
+<img class="badge"
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Plastic-recyc-symbol.svg/512px-Plastic-recyc-symbol.svg.png">
+
+</div>
+
+</body>
+</html>
